@@ -1,0 +1,9 @@
+<nav class="navbar">
+    <h3 class="navbar-title">Projects</h3>
+    <ul class="navbar-list">
+      <li *ngFor="let project of projects">
+        <button (click)="sendProjectId(project.id)" class="navbar-item">{{ project.name }}</button>
+      </li>
+    </ul>
+    <app-buttons [showAllDependencies]="true"></app-buttons>
+  </nav>
