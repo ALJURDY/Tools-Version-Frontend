@@ -10,9 +10,11 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
 import { RepositoriesComponent } from './components/repositories/repositories.component';
 import { FormsModule } from '@angular/forms';
 import { DependenciesComponent } from './pages/dependencies/dependencies.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AuthenticationService } from './services/authentication.service';
+import { JwtInterceptor } from './core/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,10 @@ import { SignupComponent } from './pages/signup/signup.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthenticationService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+  ],
   exports: [
     HomeComponent
   ],

@@ -1,9 +1,15 @@
 <nav class="navbar">
-    <h3 class="navbar-title">Projects</h3>
-    <ul class="navbar-list">
-      <li *ngFor="let project of projects">
-        <button (click)="sendProjectId(project.id)" class="navbar-item">{{ project.name }}</button>
-      </li>
-    </ul>
-    <app-buttons [showAllDependencies]="true"></app-buttons>
-  </nav>
+  <h3 class="navbar-title">Projects</h3>
+  <div class="navbar-toggle" (click)="toggleNavbar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="navbar-list" [class.active]="navbarOpen">
+    <li *ngFor="let project of projects">
+      <button (click)="sendProjectId(project.id)" class="navbar-item">{{ project.name }}</button>
+    </li>
+  </ul>
+
+  <app-buttons [showAllDependencies]="true"></app-buttons>
+</nav>

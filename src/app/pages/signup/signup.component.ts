@@ -9,14 +9,24 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class SignupComponent {
   username: string = '';
+  email: string = '';
   password: string = '';
 
   constructor(private authenticationService: AuthenticationService, private router: Router) {}
 
   register() {
-    this.authenticationService.register({ username: this.username, password: this.password })
-      .subscribe(response => {
-        this.router.navigate(['/login']);
+    this.authenticationService.register({
+       username: this.username,
+       userEmail: this.email,
+        password: this.password,
+        role: 'USER'
+       })
+      .subscribe(response =>  {
+        const token = response.access_token;
+        if (token) {
+          this.authenticationService.setToken(token);
+          this.router.navigate(['/home']);
+        }
       });
   }
 }

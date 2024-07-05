@@ -10,6 +10,7 @@ import { ProjectService } from 'src/app/services/project.service';
 export class HeaderComponent implements OnInit {
   @Output() projectSelected = new EventEmitter<number>();
   projects: Project[] = [];
+  navbarOpen = false;
 
   constructor(private projectService: ProjectService) {}
 
@@ -30,5 +31,8 @@ export class HeaderComponent implements OnInit {
 
   sendProjectId(id: number) {
     this.selectProject(id);
+  }
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
   }
 }
