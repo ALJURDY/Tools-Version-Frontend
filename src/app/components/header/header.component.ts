@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Project } from 'src/app/models/projects.model';
 import { ProjectService } from 'src/app/services/project.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
@@ -12,7 +14,7 @@ export class HeaderComponent implements OnInit {
   projects: Project[] = [];
   navbarOpen = false;
 
-  constructor(private projectService: ProjectService) {}
+  constructor(private projectService: ProjectService, private router: Router) {}
 
   ngOnInit() {
     this.projectService.getProjects().subscribe({
@@ -34,5 +36,8 @@ export class HeaderComponent implements OnInit {
   }
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
+  }
+  navigateToAllDependencies() {
+    this.router.navigate(['/dependency']);
   }
 }

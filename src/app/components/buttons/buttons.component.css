@@ -1,12 +1,4 @@
-.all-dependencies-button {
-    color: #007bff;
-    background-color: transparent;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  .clear-cache-button {
+.clear-cache-button {
     color: white;
     background-color: #BB2D3B;
     padding: 5px;
