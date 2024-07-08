@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'dependency', component: DependenciesComponent, canActivate: [AuthGuard] },
-  { path: 'repository/:id', component: RepositoryDetailsComponent, canActivate: [AuthGuard] } 
+  { path: 'repository/:name', component: RepositoryDetailsComponent, canActivate: [AuthGuard] } 
 
 ];
 

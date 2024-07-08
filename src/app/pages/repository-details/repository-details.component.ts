@@ -15,13 +15,13 @@ export class RepositoryDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id !== null) {
-      this.repositoryService.getRepositoryById(id).subscribe(data => {
+    const name = this.route.snapshot.paramMap.get('name');
+    if (name !== null) {
+      this.repositoryService.getRepositoryByName(name).subscribe(data => {
         this.repository = data;
       });
     } else {
-      console.error('Repository ID is null');
+      console.error('Repository name is null');
     }
   }
 }

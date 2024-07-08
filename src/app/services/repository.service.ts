@@ -8,12 +8,12 @@ import { Repository } from '../models/repository.model';
 })
 export class RepositoryService {
 
-  private apiUrl = '';
+  private baseUrl = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) { }
 
-  getRepositoryById(id: string): Observable<Repository> {
-    return this.http.get<Repository>(`${this.apiUrl}/repository/${id}`);
+  getRepositoryByName(name: string): Observable<Repository> {
+    return this.http.get<Repository>(`${this.baseUrl}repositories/${name}`);
   }
 
 }
