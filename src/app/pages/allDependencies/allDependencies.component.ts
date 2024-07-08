@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-dependencies',
-  templateUrl: './dependencies.component.html',
-  styleUrls: ['./dependencies.component.css']
+  templateUrl: './allDependencies.component.html',
+  styleUrls: ['./allDependencies.component.css']
 })
 export class DependenciesComponent {
 

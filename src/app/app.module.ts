@@ -9,12 +9,13 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { RepositoriesComponent } from './components/repositories/repositories.component';
 import { FormsModule } from '@angular/forms';
-import { DependenciesComponent } from './pages/dependencies/dependencies.component';
+import { DependenciesComponent } from './pages/allDependencies/allDependencies.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AuthenticationService } from './services/authentication.service';
 import { JwtInterceptor } from './core/jwt.interceptor';
+import { RepositoryDetailsComponent } from './pages/repository-details/repository-details.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { JwtInterceptor } from './core/jwt.interceptor';
     DependenciesComponent,
     LoginComponent,
     SignupComponent,
+    RepositoryDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,11 @@
 <div class="repositories-list">
-    <div *ngFor="let repo of repositories" class="repository-item">
-      <img [src]="repo.icon" alt="{{ repo.name }} icon" class="repository-icon">
+  <div *ngFor="let repo of repositories" class="repository-item">
+    <a [routerLink]="['/repository', repo.name]" class="repository-link">
+      <img [src]="'assets/images/' + repo.icon" alt="{{ repo.name }} icon" class="repository-icon">
       <div class="repository-details">
-        <p class="repository-name">{{ repo.name }}</p>
-        <p class="repository-percentage">{{ repo.percentage }}</p>
+        <span class="repository-name">{{ repo.name }}</span>
+        <span class="repository-percentage">{{ repo.percentage }} %</span>
       </div>
-    </div>
+    </a>
   </div>
-  
-  
+</div>

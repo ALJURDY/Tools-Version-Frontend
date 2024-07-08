@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { DependenciesComponent } from './pages/dependencies/dependencies.component';
+import { DependenciesComponent } from './pages/allDependencies/allDependencies.component';
+
+
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AuthGuard } from './core/auth.guard';
+import { RepositoryDetailsComponent } from './pages/repository-details/repository-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -12,6 +15,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'dependency', component: DependenciesComponent, canActivate: [AuthGuard] },
+  { path: 'repository/:id', component: RepositoryDetailsComponent, canActivate: [AuthGuard] } 
+
 ];
 
 @NgModule({

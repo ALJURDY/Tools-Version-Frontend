@@ -8,12 +8,20 @@
 
 .repository-item {
   width: calc(80% - 20px);
-  border: 1px solid lightgray; 
-  padding: 5px; 
+  border: 1px solid lightgray;
+  padding: 5px;
   display: flex;
-  align-items: center; 
+  align-items: center; /* Align items vertically in the center */
   justify-content: space-between; /* Distribute space between icon and details */
   margin: 0 10px; /* Equal left and right margin */
+}
+
+.repository-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit; /* Inherit color from parent */
+  width: 100%; /* Make the link cover the whole item */
 }
 
 .repository-icon {
@@ -25,10 +33,17 @@
 .repository-details {
   flex-grow: 1;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.repository-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .repository-percentage {
-  margin-right: 20px; 
+  margin-left: 10px;
 }
