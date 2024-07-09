@@ -12,7 +12,7 @@ export class RepositoryService {
 
   constructor(private http: HttpClient) { }
 
-  getRepositoryByName(name: string): Observable<Repository> {
+  getRepositoryByName(name:string): Observable<Repository> {
     return this.http.get<Repository>(`${this.baseUrl}repositories/${name}`);
   }
 

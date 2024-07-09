@@ -3,5 +3,6 @@ export interface Repository {
     name: string;
     icon: string;
     percentage: string;
+    dependencies: any[];
   }
   

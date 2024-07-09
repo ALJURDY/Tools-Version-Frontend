@@ -1,1 +1,13 @@
-<p>repository-details works!</p>
+<div *ngIf="repository">
+    <img [src]="'assets/icons/' + repository.icon" alt="{{ repository.name }} icon">
+    <h1>{{ repository.name }}</h1>
+    <p>{{ repository.percentage }} %</p>
+  
+    <h2>Dependencies</h2>
+    <ul>
+      <li *ngFor="let dependency of repository.dependencies">
+        {{ dependency.name }}
+      </li>
+    </ul>
+  </div>
+  
