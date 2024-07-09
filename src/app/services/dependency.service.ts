@@ -1,17 +1,17 @@
-// import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
-// import { Observable } from 'rxjs';
-// import { Project } from '../models/projects.model';
-// import { Repository } from '../models/repository.model';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Dependency } from '../models/dependency.model';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class ProjectService {
-//   private baseUrl = 'http://localhost:8080/home';
+@Injectable({
+    providedIn: 'root'
+})
+export class DependencyService {
+    private baseUrl = 'http://localhost:8080/all-dependencies';
 
-//   constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) { }
 
-//   getProjects(): Observable<Project[]> {
-//     return this.http.get<Project[]>(`${this.baseUrl}`);
-//   }
+    getAllDependencies(): Observable<Dependency[]> {
+        return this.http.get<Dependency[]>(`${this.baseUrl}`);
+    }
+}
