@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Dependency } from 'src/app/models/dependency.model';
 import { DependencyService } from 'src/app/services/dependency.service';
 
 @Component({
-  selector: 'app-dependencies',
+  selector: 'app-allDependencies',
   templateUrl: './allDependencies.component.html',
   styleUrls: ['./allDependencies.component.css']
 })
-export class DependenciesComponent implements OnInit {
+export class AllDependenciesComponent implements OnInit {
 
-  dependencies : Dependency[] = []
+  allDependencies : Dependency[] = []
 
   constructor(private dependencyService: DependencyService) {}
 
@@ -19,7 +19,7 @@ export class DependenciesComponent implements OnInit {
 
   loadDependencies() {
     this.dependencyService.getAllDependencies().subscribe(data => {
-      this.dependencies = data;
+      this.allDependencies = data;
     });
   }
 }

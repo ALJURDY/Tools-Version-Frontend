@@ -38,6 +38,6 @@ export class HeaderComponent implements OnInit {
     this.navbarOpen = !this.navbarOpen;
   }
   navigateToAllDependencies() {
-    this.router.navigate(['/dependency']);
+    this.router.navigate(['/all-dependencies']);
   }
 }

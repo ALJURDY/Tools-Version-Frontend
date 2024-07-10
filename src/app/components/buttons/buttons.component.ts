@@ -6,8 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./buttons.component.css']
 })
 export class ButtonsComponent {
-  @Input() showAllDependencies: boolean = false;
-  @Input() showClearCache: boolean = false;
   @Input() showReturnToHome: boolean = false;
-  @Input() showPercentage: boolean = false;
 }
