@@ -16,6 +16,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { AuthenticationService } from './services/authentication.service';
 import { JwtInterceptor } from './core/jwt.interceptor';
 import { RepositoryDetailsComponent } from './pages/repository-details/repository-details.component';
+import { DependencyDetailsComponent } from './pages/dependency-details/dependency-details.component';
+import { PluginDetailsComponent } from './pages/plugin-details/plugin-details.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { RepositoryDetailsComponent } from './pages/repository-details/repositor
     LoginComponent,
     SignupComponent,
     RepositoryDetailsComponent,
+    DependencyDetailsComponent,
+    PluginDetailsComponent,
   ],
   imports: [
     BrowserModule,

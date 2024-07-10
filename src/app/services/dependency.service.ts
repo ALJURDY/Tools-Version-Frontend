@@ -14,4 +14,8 @@ export class DependencyService {
     getAllDependencies(): Observable<Dependency[]> {
         return this.http.get<Dependency[]>(`${this.baseUrl}`);
     }
+    
+  getDependencyByName(name:string | null): Observable<Dependency> {
+    return this.http.get<Dependency>(`${this.baseUrl}/${name}`);
+  }
 }

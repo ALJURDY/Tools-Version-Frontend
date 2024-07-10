@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AllDependenciesComponent } from './pages/allDependencies/allDependencies.component';
 import { RepositoryDetailsComponent } from './pages/repository-details/repository-details.component';
+import { DependencyDetailsComponent } from './pages/dependency-details/dependency-details.component';
 
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -13,9 +14,9 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'dependency', component: AllDependenciesComponent, canActivate: [AuthGuard] },
+  { path: 'all-dependencies', component: AllDependenciesComponent, canActivate: [AuthGuard] },
+  { path: 'dependency/:name', component: DependencyDetailsComponent, canActivate: [AuthGuard] },
   { path: 'repository/:name', component: RepositoryDetailsComponent, canActivate: [AuthGuard] },
-  { path: 'all-dependencies', component: AllDependenciesComponent, canActivate: [AuthGuard] }
 
 ];
 
