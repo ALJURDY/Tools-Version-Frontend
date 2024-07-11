@@ -1,10 +1,11 @@
 <div class="repositories-list">
-  <div *ngFor="let repo of repositories" class="repository-item">
-    <a [routerLink]="['/repository', repo.name]" class="repository-link">
+  <div *ngFor="let repo of repositories" class="repository-item list-group-item">    <a [routerLink]="['/repository', repo.name]" class="repository-link">
       <img [src]="'assets/images/' + repo.icon" alt="{{ repo.name }} icon" class="repository-icon">
       <div class="repository-details">
         <span class="repository-name">{{ repo.name }}</span>
-        <span class="repository-percentage">{{ repo.percentage }} %</span>
+        <button class="repository-percentage" [ngStyle]="{'background-color': getButtonColor(repo.percentage)}">
+          {{ repo.percentage }} %
+        </button>
       </div>
     </a>
   </div>

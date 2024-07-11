@@ -1,23 +1,24 @@
 <div *ngIf="repository">
+  
     <img [src]="'assets/images/' + repository.icon" alt="{{ repository.name }} icon">
     <h1>{{ repository.name }}</h1>
     <p>{{ repository.percentage }} %</p>
   
-    <h2>Dependencies</h2>
+    <h2 *ngIf="repository.dependencies">Dependencies</h2>
     <ul>
       <li *ngFor="let dependency of repository.dependencies">
         {{ dependency.icon}}
-        {{ dependency.name}}
+        <a [routerLink]="['/dependency', dependency.name]" class="dependency-link">{{ dependency.name}}</a>
         {{ dependency.current_version}}
         {{ dependency.latest_version_used}}
         {{ dependency.latest_release}}
       </li>
     </ul>
-    <h2>Plugins</h2>
+    <h2 *ngIf="repository.plugins">Plugins</h2>
     <ul>
         <li *ngFor="let plugin of repository.plugins">
           {{ plugin.icon}}
-          {{ plugin.name}}
+          <a [routerLink]="['/plugin', plugin.name]" class="dependency-link">{{ plugin.name}}</a>
           {{ plugin.current_version}}
           {{ plugin.latest_version_used}}
           {{ plugin.latest_release}}

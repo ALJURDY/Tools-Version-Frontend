@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-search-bar',
@@ -6,11 +6,15 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent {
-  @Output() searchQuery = new EventEmitter<string>();
 
   onSearch(event: Event) {
     const inputElement = event.target as HTMLInputElement;
-    const query = inputElement.value;
-    this.searchQuery.emit(query);
+    const searchInput = inputElement.value.toLowerCase();
+    const allRepositories = document.querySelectorAll<HTMLElement>('.list-group-item');
+
+    allRepositories.forEach(repository => {
+      repository.style.display = repository.textContent?.toLowerCase().includes(searchInput) ? '' : 'none';
+    });
   }
 }
+ 

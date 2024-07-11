@@ -2,7 +2,7 @@ export interface Repository {
     id: number;
     name: string;
     icon: string;
-    percentage: string;
+    percentage: number;
     dependencies: any[];
   }
   
