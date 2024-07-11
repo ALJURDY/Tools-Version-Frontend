@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Plugin } from 'src/app/models/plugin.model';
+import { PluginService } from 'src/app/services/plugin.service';
 
 @Component({
   selector: 'app-plugin-details',
@@ -6,5 +9,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./plugin-details.component.css']
 })
 export class PluginDetailsComponent {
+
+  plugin:Plugin | undefined;
+
+  constructor(
+    private pluginService: PluginService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const name = params.get('name');
+
+        this.loadPlugin(name);
+    });
+  }
+
+  loadPlugin(name:string | null) {
+    this.pluginService.getPluginByName(name).subscribe(data => {
+      this.plugin = data;
+    });
+  }
 
 }

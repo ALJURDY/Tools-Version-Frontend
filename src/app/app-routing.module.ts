@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AllDependenciesComponent } from './pages/allDependencies/allDependencies.component';
 import { RepositoryDetailsComponent } from './pages/repository-details/repository-details.component';
 import { DependencyDetailsComponent } from './pages/dependency-details/dependency-details.component';
+import { PluginDetailsComponent } from './pages/plugin-details/plugin-details.component';
 
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -15,8 +16,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'all-dependencies', component: AllDependenciesComponent, canActivate: [AuthGuard] },
-  { path: 'dependency/:name', component: DependencyDetailsComponent, canActivate: [AuthGuard] },
   { path: 'repository/:name', component: RepositoryDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'dependency/:name', component: DependencyDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'plugin/:name', component: PluginDetailsComponent, canActivate: [AuthGuard] } 
 
 ];
 

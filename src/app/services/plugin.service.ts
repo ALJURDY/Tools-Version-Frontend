@@ -8,12 +8,12 @@ import { Plugin } from '../models/plugin.model';
 })
 export class PluginService {
 
-  private baseUrl = 'http://localhost:8080/';
+  private baseUrl = 'http://localhost:8080/plugins';
 
   constructor(private http: HttpClient) { }
 
-  getPluginByName(name:string): Observable<Plugin> {
-    return this.http.get<Plugin>(`${this.baseUrl}plugin/${name}`);
+  getPluginByName(name:string|null): Observable<Plugin> {
+    return this.http.get<Plugin>(`${this.baseUrl}/${name}`);
   }
 
 }
