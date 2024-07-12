@@ -1,0 +1,81 @@
+.repository-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .repository-item {
+    width: 80%;
+    border: 1px solid lightgray;
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+  }
+  
+  .repository-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .repository-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .repository-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .repository-name {
+    flex-grow: 1;
+  }
+  
+  .repository-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .repository-percentage, .return-button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
+  
+  .repository-percentage {
+    color: white;
+  }
+  
+  .return-button {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .dependencies-table, .plugins-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .dependencies-table th, .plugins-table th,
+  .dependencies-table td, .plugins-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .dependencies-table th, .plugins-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  .element-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  

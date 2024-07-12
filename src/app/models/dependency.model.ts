@@ -6,4 +6,10 @@ export interface Dependency {
     latestVersionUsed: string;
     latestRelease: string;
     use_count: string;
+    versions?: Version[];
+  }
+
+  export interface Version {
+    version: string;
+    repositories: string[];
   }

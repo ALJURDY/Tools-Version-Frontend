@@ -1,4 +1,27 @@
-<div *ngIf="dependency">
-    <p>Name: {{ dependency.name }}</p>
+<div class="dependency-details-container">
+    <div class="header">
+      <h1>{{ dependency?.name }}</h1>
+      <div class="top-right-container">
+        <!-- <button class="percentage-button">{{ dependency?.percentage }} %</button> -->
+        <button class="return-button" (click)="returnToHome()">Return to home</button>
+      </div>
     </div>
+    
+    <p>Latest release: {{ dependency?.latestRelease }}</p>
+    
+    <div class="versions-list">
+      <div *ngFor="let version of dependency?.versions" class="version-item">
+        <div class="version-header">
+          <span class="version-number">{{ version.version }}</span>
+        </div>
+        <div class="repositories-list">
+          <ul>
+            <li *ngFor="let repo of version.repositories">
+              <a [routerLink]="['/repository', repo]">{{ repo }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   

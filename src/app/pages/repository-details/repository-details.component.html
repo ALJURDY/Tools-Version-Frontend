@@ -1,28 +1,56 @@
-<div *ngIf="repository">
-  
-    <img [src]="'assets/images/' + repository.icon" alt="{{ repository.name }} icon">
-    <h1>{{ repository.name }}</h1>
-    <p>{{ repository.percentage }} %</p>
-  
-    <h2 *ngIf="repository.dependencies">Dependencies</h2>
-    <ul>
-      <li *ngFor="let dependency of repository.dependencies">
-        {{ dependency.icon}}
-        <a [routerLink]="['/dependency', dependency.name]" class="dependency-link">{{ dependency.name}}</a>
-        {{ dependency.current_version}}
-        {{ dependency.latest_version_used}}
-        {{ dependency.latest_release}}
-      </li>
-    </ul>
-    <h2 *ngIf="repository.plugins">Plugins</h2>
-    <ul>
-        <li *ngFor="let plugin of repository.plugins">
-          {{ plugin.icon}}
-          <a [routerLink]="['/plugin', plugin.name]" class="dependency-link">{{ plugin.name}}</a>
-          {{ plugin.current_version}}
-          {{ plugin.latest_version_used}}
-          {{ plugin.latest_release}}
-        </li>
-      </ul>
+<div class="repository-details">
+  <div *ngIf="repository" class="repository-item">
+    <div class="repository-header">
+      <div class="repository-info">
+        <img [src]="'assets/images/' + repository.icon" alt="{{ repository.name }} icon" class="repository-icon">
+        <h1 class="repository-name">{{ repository.name }}</h1>
+      </div>
+      <div class="repository-actions">
+        <button class="repository-percentage" [ngStyle]="{'background-color': getButtonColor(repository.percentage)}">
+          {{ repository.percentage }} %
+        </button>
+        <button (click)="returnToHome()" class="return-button">Return to home</button>
+      </div>
+    </div>
+    <h2 *ngIf="repository.dependencies && repository.dependencies.length > 0">Dependencies</h2>
+    <table *ngIf="repository.dependencies && repository.dependencies.length > 0" class="dependencies-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Current version</th>
+          <th>Latest version used</th>
+          <th>Latest release</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dependency of repository.dependencies">
+          <td><img [src]="'assets/images/' + dependency.icon" alt="{{ dependency.name }} icon" class="element-icon">
+            <a [routerLink]="['/dependency', dependency.name]" class="dependency-link">{{ dependency.name}}</a></td>
+          <td>{{ dependency.current_version}}</td>
+          <td>{{ dependency.latest_version_used}}</td>
+          <td>{{ dependency.latest_release}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 *ngIf="repository.plugins && repository.plugins.length > 0">Plugins</h2>
+    <table *ngIf="repository.plugins && repository.plugins.length > 0" class="plugins-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Current version</th>
+          <th>Latest version used</th>
+          <th>Latest release</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plugin of repository.plugins">
+          <td><img [src]="'assets/images/' + plugin.icon" alt="{{ plugin.name }} icon" class="element-icon">
+            <a [routerLink]="['/plugin', plugin.name]" class="dependency-link">{{ plugin.name}}</a></td>
+          <td>{{ plugin.current_version}}</td>
+          <td>{{ plugin.latest_version_used}}</td>
+          <td>{{ plugin.latest_release}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  
+</div>

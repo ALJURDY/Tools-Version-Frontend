@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Plugin } from 'src/app/models/plugin.model';
 import { PluginService } from 'src/app/services/plugin.service';
 
@@ -14,8 +14,13 @@ export class PluginDetailsComponent {
 
   constructor(
     private pluginService: PluginService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
+
+  returnToHome() {
+    this.router.navigate(['/home']);
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {

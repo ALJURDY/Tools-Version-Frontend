@@ -1,19 +1,17 @@
-<div>
-    <div>
-      <app-search-bar></app-search-bar>
-    </div>
-    <div class="dependencies-list">
-      <h2>All Dependencies</h2>
-    </div>
-    <div class="dependencies-list">
-        <div *ngFor="let dependency of allDependencies" class="dependency-item">
-          <a [routerLink]="['/dependency', dependency.name]" class="dependency-link">
-            <img [src]="'assets/images/' + dependency.icon" alt="{{ dependency.name }} icon" class="dependency-icon">
-            <div class="dependency-details">
-              <span class="dependency-name">{{ dependency.name }}</span>
-              <span class="dependency-use">{{ dependency.use_count }}</span>
-            </div>
-          </a>
+<div class="container">
+  <div class="header">
+    <app-search-bar></app-search-bar>
+    <button (click)="returnToHome()" class="return-button">Return to home</button>
+  </div>
+  <div class="dependencies-list">
+    <div *ngFor="let dependency of allDependencies" class="dependency-item">
+      <a [routerLink]="['/dependency', dependency.name]" class="dependency-link">
+        <img [src]="'assets/images/' + dependency.icon" alt="{{ dependency.name }} icon" class="dependency-icon">
+        <div class="dependency-details">
+          <span class="dependency-name">{{ dependency.name }}</span>
+          <span class="dependency-use">{{ dependency.use_count }} use</span>
         </div>
-      </div>
-      
+      </a>
+    </div>
+  </div>
+</div>

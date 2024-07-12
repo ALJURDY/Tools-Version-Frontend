@@ -1,0 +1,69 @@
+.dependency-details-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .top-right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .percentage-button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .return-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .versions-list {
+    margin-top: 20px;
+  }
+  
+  .version-item {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .version-header {
+    background-color: #f0f0f0;
+    padding: 5px;
+    font-weight: bold;
+  }
+  
+  .repositories-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .repositories-list li {
+    padding: 5px 0;
+  }
+  
+  .repositories-list a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .repositories-list a:hover {
+    text-decoration: underline;
+  }
+  
