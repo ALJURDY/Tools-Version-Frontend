@@ -26,9 +26,9 @@
         <tr *ngFor="let dependency of repository.dependencies">
           <td><img [src]="'assets/images/' + dependency.icon" alt="{{ dependency.name }} icon" class="element-icon">
             <a [routerLink]="['/dependency', dependency.name]" class="dependency-link">{{ dependency.name}}</a></td>
-          <td>{{ dependency.current_version}}</td>
-          <td>{{ dependency.latest_version_used}}</td>
-          <td>{{ dependency.latest_release}}</td>
+          <td>{{ dependency.currentVersion}}</td>
+          <td>{{ dependency.latestVersionUsed}}</td>
+          <td>{{ dependency.latestRelease}}</td>
         </tr>
       </tbody>
     </table>
@@ -46,9 +46,9 @@
         <tr *ngFor="let plugin of repository.plugins">
           <td><img [src]="'assets/images/' + plugin.icon" alt="{{ plugin.name }} icon" class="element-icon">
             <a [routerLink]="['/plugin', plugin.name]" class="dependency-link">{{ plugin.name}}</a></td>
-          <td>{{ plugin.current_version}}</td>
-          <td>{{ plugin.latest_version_used}}</td>
-          <td>{{ plugin.latest_release}}</td>
+          <td>{{ plugin.currentVersion}}</td>
+          <td>{{ plugin.latestVersionUsed}}</td>
+          <td>{{ plugin.latestRelease}}</td>
         </tr>
       </tbody>
     </table>

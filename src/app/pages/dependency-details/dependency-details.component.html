@@ -10,13 +10,13 @@
     <p>Latest release: {{ dependency?.latestRelease }}</p>
     
     <div class="versions-list">
-      <div *ngFor="let version of dependency?.versions" class="version-item">
+      <div *ngFor="let currentVersion of dependency?.currentVersions" class="version-item">
         <div class="version-header">
-          <span class="version-number">{{ version.version }}</span>
+          <span class="version-number">{{ currentVersion.versionNumber }}</span>
         </div>
         <div class="repositories-list">
           <ul>
-            <li *ngFor="let repo of version.repositories">
+            <li *ngFor="let repo of currentVersion.repositoryNames">
               <a [routerLink]="['/repository', repo]">{{ repo }}</a>
             </li>
           </ul>

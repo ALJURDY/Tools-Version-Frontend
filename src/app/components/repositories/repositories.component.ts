@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Repository } from 'src/app/models/repository.model';
 @Component({
   selector: 'app-repositories',
