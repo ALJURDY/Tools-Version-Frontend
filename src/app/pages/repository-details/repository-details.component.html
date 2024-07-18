@@ -26,7 +26,7 @@
         <tr *ngFor="let dependency of repository.dependencies">
           <td><img [src]="'assets/images/' + dependency.icon" alt="{{ dependency.name }} icon" class="element-icon">
             <a [routerLink]="['/dependency', dependency.name]" class="dependency-link">{{ dependency.name}}</a></td>
-          <td>{{ dependency.currentVersion}}</td>
+          <td>{{ dependency.cv }}</td>
           <td>{{ dependency.latestVersionUsed}}</td>
           <td>{{ dependency.latestRelease}}</td>
         </tr>

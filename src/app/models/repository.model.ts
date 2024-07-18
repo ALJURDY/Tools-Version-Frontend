@@ -4,5 +4,6 @@ export interface Repository {
     icon: string;
     percentage: number;
     dependencies: any[];
+    plugins: any[];
   }
   
