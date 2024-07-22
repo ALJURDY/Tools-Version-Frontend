@@ -32,4 +32,14 @@ export class AuthenticationService {
   getToken(): string | null {
     return localStorage.getItem('token');
   }
+
+  isTokenExpired(): boolean {
+    const token = this.getToken();
+    if (!token) {
+      return true;
+    }
+  
+    const expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
+    return (Math.floor((new Date).getTime() / 1000)) >= expiry;
+  }
 }
